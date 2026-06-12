@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#1a1a2e"
+    tools:context=".MainActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/sample_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="OpenGL ES Extension Probe"
+        android:textColor="#e94560"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Button row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/btn_offscreen_probe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="离屏探测"
+            android:textSize="12sp"
+            android:backgroundTint="#0f3460"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_surface_probe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:text="窗口探测"
+            android:textSize="12sp"
+            android:backgroundTint="#533483"
+            android:textColor="#ffffff"
+            android:enabled="false" />
+
+    </LinearLayout>
+
+    <!-- Hidden TextureView to provide a real hardware surface -->
+    <TextureView
+        android:id="@+id/texture_view"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="visible" />
+
+    <!-- Results area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#16213e"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/probe_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="启动中，准备探测..."
+            android:textColor="#00ff88"
+            android:textSize="10sp"
+            android:lineSpacingExtra="2dp" />
+
+    </ScrollView>
+
+</LinearLayout>
